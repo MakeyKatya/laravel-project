@@ -4,13 +4,21 @@
 <h1>Articles</h1>
 <hr>
     @foreach($articles as $article)
-        <article>
-            {{--<a href="/articles/{{$article->id}}"><h2>{{$article->title}}</h2></a>--}}
-            <a href="{{action('ArticleController@show',[$article->id])}}"><h2>{{$article->title}}</h2></a>
-            {{--<a href="{{url('articles',$article->id)}}"><h2>{{$article->title}}</h2></a>--}}
-            <div class="body">
-                {{$article->body}}
+        <div class="row">
+            <div class="col-sm-1">
+                <img src="../images/{{$article->id}}.jpg" class="img-circle" width="90" height="80">
             </div>
-        </article>
+
+            <div class="col-sm-8">
+                <article>
+                    <a href="{{action('ArticleController@show',[$article->id])}}"><h2>{{$article->title}}</h2></a>
+                    <div class="body">
+                        {{$article->body}}
+                    </div>
+                </article>
+            </div>
+        </div>
+        <hr>
+
     @endforeach
 @endsection

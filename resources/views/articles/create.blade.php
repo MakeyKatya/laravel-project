@@ -5,10 +5,10 @@
 
     <hr/>
 
-        {!! Form::open(['url' => 'articles']) !!}
+        {!! Form::model($article = new \App\Article, ['url' => 'articles']) !!}
             @include('articles.partials', ['submitButtonText'=>'Add Article'])
         {!! Form::close() !!}
 
 
-   @include('errors.list', $errors)
+   @include('errors.list')
 @endsection
